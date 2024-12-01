@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="/CSS/Carrinho.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+        <li><a href="/HTML/Home.html">Página Inicial</a></li>
+        <li><a href="/HTML/Produtos.html">Produtos</a></li>
+        <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+        <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+        <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+        <li><a href="/HTML/Login.html">Login</a></li>
+        <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+    </ul>
+</nav>
+
+<div class="carrinho__pai">
+    <h2><img src="/IMG/carrinho2.png" class="carrinho2" alt="Seu Carrinho" srcset=""></h2>
+    <div id="carrinho"></div>
+    <div>
+        <ul class="lista__pagamento">
+            <li class="lista__"><Label>Cartão de débito <input type="radio" name="pagamento"></Label></li>
+            <li class="lista__p"><Label> Pague com Pix <input type="radio" name="pagamento"></Label></li>
+            <li class="lista__p"><Label>Cartão de crédito <input type="radio" name="pagamento"></Label></li>
+            <li class="lista__"><Label>Cartão de débito <input type="radio" name="pagamento"></Label></li>
+        </ul>
+    </div>
+
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+</div>
+
+<script>
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+function exibirCarrinho() {
+    const carrinhoDiv = document.getElementById('carrinho');
+    if (carrinho.length === 0) {
+        carrinhoDiv.innerHTML = '<p>Seu carrinho está vazio.</p>';
+        return;
+    }
+
+    let total = 0;
+    carrinho.forEach(produto => {
+        carrinhoDiv.innerHTML += `<p>${produto.nome} - R$${produto.preco.toFixed(2)}</p>`;
+        total += produto.preco;
+    });
+
+    carrinhoDiv.innerHTML += `<h4>Total: R$${total.toFixed(2)}</h4>`;
+}
+
+function finalizarCompra() {
+    if (carrinho.length === 0) {
+        alert('Você não pode finalizar a compra sem adicionar produtos ao carrinho.');
+        return; 
+    }
+
+    
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (!isLoggedIn) {
+        alert('Você precisa estar logado para finalizar a compra.');
+        window.location.href = '/HTML/CadastroCliente.html'; 
+        return;
+    }
+
+    const metodoPagamentoSelecionado = document.querySelector('input[name="pagamento"]:checked');
+    if (!metodoPagamentoSelecionado) {
+        alert('Por favor, selecione um método de pagamento.');
+        return;
+    }
+    
+    alert('Compra aprovada - IZano agradece a preferência!');
+    localStorage.removeItem('carrinho');
+    window.location.href = '/HTML/Home.html';
+}
+
+exibirCarrinho();
+</script>
+
+<footer class="pezinho">
+    <ul class="lista__pezinho">
+        <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Politíca de privacidade</a></li>
+        <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+        <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</li>
