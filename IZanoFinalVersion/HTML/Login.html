@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/CSS/Login.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+    <script>
+        // Verifica se o usuário já está logado quando a página é carregada
+        window.onload = function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (isLoggedIn) {
+                alert('Você já está logado!');
+                window.location.href = '/HTML/Home.html'; // Redireciona para a página inicial se o usuário já estiver logado
+            }
+        }
+    </script>
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <!-- Logo da empresa -->
+            <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+            <!-- Links de navegação -->
+            <li><a href="/HTML/Home.html">Página Inicial</a></li>
+            <li><a href="/HTML/Produtos.html">Produtos</a></li>
+            <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+            <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+            <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+            <li><a href="/HTML/Login.html">Login</a></li>
+            <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+            <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+        </ul>
+    </nav>
+
+    <section id="cliente-login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <!-- Campo para o email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <!-- Campo para a senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Login</button>
+            <!-- Link para a página de recuperação de senha -->
+            <p><a class="botao1" href="/HTML/EsqueciMinhaSenha.html">Esqueceu sua senha?</a></p>
+        </form>
+    </section>
+
+    <footer class="pezinho">
+        <ul class="lista__pezinho">
+            <!-- Links do rodapé -->
+            <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Politíca de privacidade</a></li>
+            <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+            <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+            <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+        </ul>
+        <!-- Texto do rodapé -->
+        <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Adiciona um ouvinte de evento ao formulário de login para capturar a submissão do formulário
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Previne o comportamento padrão do formulário de recarregar a página
+            event.preventDefault();
+
+            // Obtém os valores dos campos de email e senha
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+
+            // Obtém os dados do cliente do localStorage
+            const cliente = JSON.parse(localStorage.getItem('cliente'));
+
+            // Verifica se o email e a senha correspondem aos dados do cliente
+            if (cliente && cliente.email === email && cliente.senha === senha) {
+                // Define a chave 'isLoggedIn' no localStorage para indicar que o usuário está logado
+                localStorage.setItem('isLoggedIn', true);
+                alert('Login realizado com sucesso!');
+                window.location.href = '/HTML/Home.html'; // Redireciona para a página inicial após o login bem-sucedido
+            } else {
+                alert('Email ou senha incorretos. Por favor, tente novamente.');
+            }
+        });
+    </script>
+</body>
+</html>

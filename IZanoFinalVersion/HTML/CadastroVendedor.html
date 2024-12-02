@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe conosco</title>
+    <link rel="stylesheet" href="/CSS/CadastroVendedor.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+            <li><a href="/HTML/Home.html">Página Inicial</a></li>
+            <li><a href="/HTML/Produtos.html">Produtos</a></li>
+            <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+            <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+            <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+            <li><a href="/HTML/Login.html">Login</a></li>
+            <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+            <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+        </ul>
+    </nav>
+
+    <section id="registro-vendedor">
+        <h2>Trabalhe conosco</h2>
+        <form id="vendedorForm">
+            <!-- Campo para o nome -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <!-- Campo para o email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Campo para a senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+
+            <!-- Campo para o telefone -->
+            <label for="fone">Telefone:</label>
+            <input type="tel" id="fone" name="fone" required>
+
+            <!-- Campo para o CPF -->
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <!-- Campo para o endereço -->
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <!-- Campo para anexar currículo em PDF -->
+            <label for="cv">Anexe seu Currículo (PDF):</label>
+            <input type="file" id="cv" name="cv" accept=".pdf" required>
+
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <footer class="pezinho">
+        <ul class="lista__pezinho">
+            <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Política de privacidade</a></li>
+            <li class="lista__link"><a href="/HTML/PoliticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+            <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+            <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+        </ul>
+        <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Adiciona um ouvinte de evento ao formulário de cadastro de vendedor para capturar a submissão do formulário
+        document.getElementById('vendedorForm').addEventListener('submit', function(event) {
+            // Previne o comportamento padrão do formulário de recarregar a página
+            event.preventDefault();
+
+            // Obtém os valores dos campos do formulário
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const fone = document.getElementById('fone').value;
+            const cpf = document.getElementById('cpf').value;
+            const endereco = document.getElementById('endereco').value;
+            const fileInput = document.getElementById('cv');
+            const file = fileInput.files[0];
+
+            // Verifica se o arquivo anexado é um PDF
+            if (file && file.type !== 'application/pdf') {
+                alert('Por favor, anexe um arquivo PDF.');
+                return;
+            }
+
+            // Verifica se a senha atende aos requisitos mínimos
+            const senhaRequisitos = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+            if (!senhaRequisitos.test(senha)) {
+                alert('A senha deve ter no mínimo 1 letra maiúscula, 1 caractere especial, 1 número e no mínimo 8 caracteres.');
+                return;
+            }
+
+            // Obtém os vendedores existentes do localStorage ou inicializa um array vazio
+            const vendedores = JSON.parse(localStorage.getItem('vendedores')) || [];
+
+            // Verifica se o email, telefone ou CPF já existem
+            const emailExistente = vendedores.find(vendedor => vendedor.email === email);
+            const foneExistente = vendedores.find(vendedor => vendedor.fone === fone);
+            const cpfExistente = vendedores.find(vendedor => vendedor.cpf === cpf);
+
+            // Exibe um alerta se o email já estiver cadastrado
+            if (emailExistente) {
+                alert('Email já cadastrado.');
+                return;
+            }
+
+            // Exibe um alerta se o telefone já estiver cadastrado
+            if (foneExistente) {
+                alert('Telefone já cadastrado.');
+                return;
+            }
+
+            // Exibe um alerta se o CPF já estiver cadastrado
+            if (cpfExistente) {
+                alert('CPF já cadastrado.');
+                return;
+            }
+
+            // Cria um objeto vendedor com os dados do formulário
+            const vendedor = {
+                nome: nome,
+                email: email,
+                senha: senha,
+                fone: fone,
+                cpf: cpf,
+                endereco: endereco,
+                curriculo: file.name
+            };
+
+            // Adiciona o novo vendedor ao array de vendedores
+            vendedores.push(vendedor);
+
+            // Armazena o array atualizado de vendedores no localStorage
+            localStorage.setItem('vendedores', JSON.stringify(vendedores));
+
+            // Exibe uma mensagem de sucesso
+            alert('Cadastro realizado com sucesso!');
+
+            // Reseta o formulário
+            document.getElementById('vendedorForm').reset();
+        });
+    </script>
+</body>
+</html>
