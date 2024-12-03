@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhe conosco</title>
+    <link rel="stylesheet" href="/CSS/CadastroVendedor.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+            <li><a href="/HTML/Home.html">Página Inicial</a></li>
+            <li><a href="/HTML/Produtos.html">Produtos</a></li>
+            <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+            <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+            <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+            <li><a href="/HTML/Login.html">Login</a></li>
+            <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+            <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+        </ul>
+    </nav>
+
+    <section id="registro-vendedor">
+        <h2>Trabalhe conosco</h2>
+        <form id="vendedorForm">
+            <!-- Campo para o nome -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <!-- Campo para o email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Campo para a senha -->
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required>
+            <button type="button" id="togglePassword">Mostrar Senha</button>
+
+            <!-- Campo para o telefone -->
+            <label for="fone">Telefone:</label>
+            <input type="tel" id="fone" name="fone" required>
+
+            <!-- Campo para o CPF -->
+            <label for="cpf">CPF:</label>
+            <input type="text" id="cpf" name="cpf" required>
+
+            <!-- Campo para o endereço -->
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+
+            <!-- Campo para anexar currículo em PDF -->
+            <label for="cv">Anexe seu Currículo (PDF):</label>
+            <input type="file" id="cv" name="cv" accept=".pdf" required>
+
+            <!-- Botão para enviar o formulário -->
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+    
+    <footer class="pezinho">
+        <ul class="lista__pezinho">
+            <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Política de privacidade</a></li>
+            <li class="lista__link"><a href="/HTML/PoliticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+            <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+            <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+        </ul>
+        <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="/JS/CadastroVendedor.js"></script>
+</body>
+</html>

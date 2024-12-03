@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IZano</title>
+    <link rel="stylesheet" href="/CSS/Home.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+    <nav id="navbar">
+        <ul>
+            <!-- Logo da empresa -->
+            <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+            <!-- Links de navegação -->
+            <li><a href="/HTML/Home.html">Página Inicial</a></li>
+            <li><a href="/HTML/Produtos.html">Produtos</a></li>
+            <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+            <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+            <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+            <li><a href="/HTML/Login.html">Login</a></li>
+            <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+            <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+        </ul>
+    </nav>
+
+    <section id="intro">
+        <!-- Imagem do logotipo -->
+        <img src="/IMG/IZanoLogo.png" alt="" srcset="" class="logopag">
+        <!-- Título de boas-vindas -->
+        <h1 class="texto__titulo">Bem-vindo à IZano</h1>
+        <!-- Descrição -->
+        <p class="p">A melhor loja de roupas para você</p>
+    </section>
+
+    <section id="produtos-destaque">
+        <h2>Produtos em Destaque</h2>
+        <div class="produto-grid">
+            <div class="produto">
+                <!-- Imagem do produto 1 -->
+                <img src="/IMG/camisa.png" alt="Produto 1">
+                <!-- Nome do produto 1 -->
+                <h3>Camisa IZano basic line</h3>
+                <!-- Preço do produto 1 -->
+                <p>R$99,99</p>
+                <!-- Botão para visualizar o produto 1 -->
+                <a href="/HTML/Produtos.html" class="btn" onclick="adicionarAoCarrinho('Camisa IZano basic line', 99.99)">Visualizar</a>
+            </div>
+            <div class="produto">
+                <!-- Imagem do produto 2 -->
+                <img src="/IMG/tenis.png" alt="Produto 2">
+                <!-- Nome do produto 2 -->
+                <h3>Tênis IZano Street</h3>
+                <!-- Preço do produto 2 -->
+                <p>R$299,99</p>
+                <!-- Botão para visualizar o produto 2 -->
+                <a href="/HTML/Produtos.html" class="btn">Visualizar</a>
+            </div>
+            <div class="produto">
+                <!-- Imagem do produto 3 -->
+                <img src="/IMG/calca.png" alt="Produto 3">
+                <!-- Nome do produto 3 -->
+                <h3>Calça Jogger IZano</h3>
+                <!-- Preço do produto 3 -->
+                <p>R$199,99</p>
+                <!-- Botão para visualizar o produto 3 -->
+                <a href="/HTML/Produtos.html" class="btn" onclick="adicionarAoCarrinho('Calça Jogger IZano', 199.99)">Visualizar</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pezinho">
+        <ul class="lista__pezinho">
+            <!-- Links do rodapé -->
+            <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Politíca de privacidade</a></li>
+            <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+            <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+            <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+        </ul>
+        <!-- Texto do rodapé -->
+        <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+    </footer>
+
+    <script src="/JS/Home.js"></script>
+</body>
+</html>

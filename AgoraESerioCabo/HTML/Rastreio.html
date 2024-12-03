@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rastreio do Pedido</title>
+    <link rel="stylesheet" href="/CSS/Rastreio.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <!-- Logo da empresa -->
+        <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+        <!-- Links de navegação -->
+        <li><a href="/HTML/Home.html">Página Inicial</a></li>
+        <li><a href="/HTML/Produtos.html">Produtos</a></li>
+        <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+        <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+        <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+        <li><a href="/HTML/Login.html">Login</a></li>
+        <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+        <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+    </ul>
+</nav>
+
+<div class="rastreio__pai">
+    <h2>Rastreio do Pedido</h2>
+    <!-- Campo para o código de rastreio -->
+    <input type="text" id="codigoRastreio" placeholder="Digite o código de rastreio">
+    <!-- Botão para rastrear o pedido -->
+    <button class="btn" onclick="rastrearPedido()">Rastrear Pedido</button>
+    <!-- Div para exibir o status do pedido -->
+    <div id="statusPedido"></div>
+</div>
+
+<script src="/JS/Rastreio.js"></script>
+
+<footer class="pezinho">
+    <ul class="lista__pezinho">
+        <!-- Links do rodapé -->
+        <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Política de privacidade</a></li>
+        <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+        <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+        <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+    </ul>
+    <!-- Texto do rodapé -->
+    <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --preto: #000000;
+    --amarelo: #fdfdf1;
+    --dourado: #DBB000;
+    --branco: #ffffff;
+    --hoverb:#333;
+  }
+
+body {
+    font-family: "Roboto Condensed", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--amarelo);
+    height: 100%;
+}
+
+#navbar {
+    background-color: var(--preto);
+    padding: 1rem;
+}
+
+#navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar ul li {
+    margin: 0 1rem;
+}
+
+#navbar ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+
+#navbar ul li a:hover {
+    color: var(--dourado);                      
+}
+
+.logo img {
+    height: 40px;
+}
+
+#about {
+    padding: 2rem;
+    
+    text-align: center;
+    background-color: var(--branco);
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px var(--preto);
+    
+}
+
+#about h2 {
+    margin-bottom: 1rem;
+    font-size: 48px;
+    font-family: "Dancing Script", cursive;
+    
+}
+
+#about p {
+    margin: 1rem 0;
+}
+
+.pezinho{
+
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-bottom: 0em;
+    background-color: var(--preto);
+        text-align: center;
+        flex-direction: column;
+        padding: 2em;
+        
+} 
+
+.lista__link a{
+    text-decoration: none;
+    color:var(--branco);
+    margin-left: 1em;
+}
+
+.pezinho__texto{
+    
+    margin: 0;
+    color:var(--hoverb);
+    font-size:14px;
+    text-align: center;
+    }
+    .lista__pezinho{
+
+        list-style-type: none;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-top: 1em;
+        padding: 0;
+        flex-wrap: wrap;
+        
+    }
+    .lista__link a:hover{
+        color: var(--dourado);
+    }
+    html, body {
+        height: 100%; 
+        margin: 0; 
+    }
+    
+    body {
+        display: flex;
+        flex-direction: column; 
+    }
+    
+    #about {
+        flex: 1; 
+    }
+    
+    footer {
+        background-color: var(--preto); 
+        color: var(--branco); 
+        padding: 1em; 
+    }
+    .img{
+        height: 250px;
+        
+    }
+    
+    .carrinho{
+        height: 26.5px;
+        display: flex;
+            }
+
+            .carrinho:hover{
+                height: 30px;
+                transition: 0.15s;
+            }

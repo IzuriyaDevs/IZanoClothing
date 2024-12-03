@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <link rel="stylesheet" href="/CSS/Carrinho.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+        <li><a href="/HTML/Home.html">Página Inicial</a></li>
+        <li><a href="/HTML/Produtos.html">Produtos</a></li>
+        <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+        <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+        <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+        <li><a href="/HTML/Login.html">Login</a></li>
+        <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+        <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+    </ul>
+</nav>
+
+<div class="carrinho__pai">
+    <h2><img src="/IMG/carrinho2.png" class="carrinho2" alt="Seu Carrinho" srcset=""></h2>
+    <div id="carrinho"></div>
+    <div>
+        <ul class="lista__pagamento">
+            <li class="lista__"><label>Cartão de débito <input type="radio" name="pagamento"></label></li>
+            <li class="lista__p"><label> Pague com Pix <input type="radio" name="pagamento"></label></li>
+            <li class="lista__p"><label>Cartão de crédito <input type="radio" name="pagamento"></label></li>
+            <li class="lista__"><label>Cartão de débito <input type="radio" name="pagamento"></label></li>
+        </ul>
+        <ul class="lista__transportadora">
+            <li class="lista__"><label>Sedez<input type="radio" name="transportadora"></label></li>
+            <li class="lista__p"><label>PagouChegou<input type="radio" name="transportadora"></label></li>
+            <li class="lista__p"><label>TanaMão<input type="radio" name="transportadora"></label></li>
+        </ul>
+    </div>
+
+    <button class="btn" onclick="finalizarCompra()">Finalizar Compra</button>
+    <button class="btn" onclick="limparCarrinho()">Limpar Carrinho</button>
+</div>
+
+<script src="/JS/Carrinho.js"></script>
+
+<footer class="pezinho">
+    <ul class="lista__pezinho">
+        <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Política de privacidade</a></li>
+        <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+        <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+        <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+    </ul>
+    <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>

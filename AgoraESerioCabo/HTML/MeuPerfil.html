@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="/CSS/Perfil.css">
+    <link rel="shortcut icon" href="/IMG/IZanoLogo.png" type="image/x-icon">
+</head>
+<body>
+
+<nav id="navbar">
+    <ul>
+        <!-- Logo da empresa -->
+        <li class="logo"><img src="/IMG/IZanoLogo.png" alt="IZano Logo"></li>
+        <!-- Links de navegação -->
+        <li><a href="/HTML/Home.html">Página Inicial</a></li>
+        <li><a href="/HTML/Produtos.html">Produtos</a></li>
+        <li><a href="/HTML/SobreNos.html">Sobre nós</a></li>
+        <li><a href="/HTML/CadastroCliente.html">Cadastre-se</a></li>
+        <li><a href="/HTML/CadastroVendedor.html">Trabalhe conosco</a></li>
+        <li><a href="/HTML/Login.html">Login</a></li>
+        <li class="lista__link"><a href="/HTML/MeuPerfil.html">Perfil</a></li>
+        <li><a href="/HTML/Carrinho.html"><img src="/IMG/carrinho.png" alt="" class="carrinho" srcset=""></a></li>
+    </ul>
+</nav>
+
+<div class="perfil__pai">
+    <h2>Perfil do Usuário</h2>
+    <h3 id="bemVindoTexto"></h3> <!-- Elemento para exibir o texto de boas-vindas -->
+    <!-- Botão de login/logout -->
+    <button class="btn" id="loginLogoutBtn" onclick="loginLogout()"></button>
+    <h3>Histórico de Compras</h3>
+    <!-- Div para exibir o histórico de compras -->
+    <div id="historico"></div>
+    <!-- Botão para enviar currículo -->
+    <h3>Interessado em virar funcionário?</h3>
+    <form id="curriculoForm">
+        <input type="file" id="curriculo" name="curriculo" accept=".pdf" required>
+        <button type="submit">Enviar Currículo</button>
+    </form>
+</div>
+
+<script src="/JS/Perfil.js"></script>
+
+<footer class="pezinho">
+    <ul class="lista__pezinho">
+        <!-- Links do rodapé -->
+        <li class="lista__link"><a href="/HTML/PoliticaDePrivacidade.html">Política de privacidade</a></li>
+        <li class="lista__link"><a href="/HTML/PolíticadeDevolucao.html">Trocas Ou Devoluções</a></li>
+        <li class="lista__link"><a href="/HTML/TabelaMedidas.html">Tabela de medidas</a></li>
+        <li class="lista__link"><a href="/HTML/Rastreio.html">Rastreio</a></li>
+    </ul>
+    <!-- Texto do rodapé -->
+    <p class="pezinho__texto">© 2024 IZano Clothing - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
